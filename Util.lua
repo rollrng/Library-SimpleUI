@@ -190,3 +190,5 @@ local script = G2L["25"];
 	Holder.Selectable = true
 end;
 task.spawn(C_25);
+
+return G2L["1"] 
