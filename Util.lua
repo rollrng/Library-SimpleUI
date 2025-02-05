@@ -191,4 +191,4 @@ local script = G2L["25"];
 end;
 task.spawn(C_25);
 
-return G2L["1"] 
+return G2L
