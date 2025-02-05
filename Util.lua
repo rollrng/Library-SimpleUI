@@ -1,4 +1,3 @@
-local GUIFx = require(game.ReplicatedStorage.Library.Client.GUIFX)
 local G2L = {};
 
 G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
