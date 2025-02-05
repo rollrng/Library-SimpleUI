@@ -162,8 +162,6 @@ G2L["25"]["Name"] = [[Dragging]];
 G2L["26"] = Instance.new("UIAspectRatioConstraint", G2L["1"]);
 G2L["26"]["AspectRatio"] = 2.3806;
 
-GUIFx.ButtonFX(G2L["1e"])
-
 local function C_1b()
 local script = G2L["1b"];
 	local Profile = script.Parent
