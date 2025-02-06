@@ -1,5 +1,20 @@
 local G2L = {};
 
+local Camera = workspace.CurrentCamera
+local DEFAULT_VIEWPORT = Vector2.new(1920, 1080) 
+
+local minimize = function(vector2)
+    return math.min(vector2.X, vector2.Y)
+end
+
+local CompareRatio = function(viewportSize)
+    return minimize(Camera.ViewportSize) / minimize(viewportSize)
+end
+
+local FixStrokeThickness = function(uiStroke, OThickness, viewportSize)
+    uiStroke.Thickness = OThickness * CompareRatio(viewportSize)
+end
+
 G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
 G2L["1"]["Name"] = [[Spunk]];
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
@@ -161,6 +176,21 @@ G2L["25"] = Instance.new("LocalScript", G2L["2"]);
 G2L["25"]["Name"] = [[Dragging]];
 G2L["26"] = Instance.new("UIAspectRatioConstraint", G2L["1"]);
 G2L["26"]["AspectRatio"] = 2.3806;
+
+local FixStrokes = function()
+    for _, instance in pairs(UI["G2L"]) do
+        if instance:IsA("UIStroke") then
+            local OThickness = instance:GetAttribute("OThickness") or instance.Thickness
+            instance:SetAttribute("OThickness", OThickness)
+            FixStrokeThickness(instance, OThickness, DEFAULT_VIEWPORT)
+            end
+        end
+    end
+
+    Camera:GetPropertyChangedSignal("ViewportSize"):Connect(FixStrokes)
+
+    FixStrokes()
+
 
 local function C_1b()
 local script = G2L["1b"];
