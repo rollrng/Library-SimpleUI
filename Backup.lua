@@ -178,7 +178,7 @@ G2L["26"] = Instance.new("UIAspectRatioConstraint", G2L["1"]);
 G2L["26"]["AspectRatio"] = 2.3806;
 
 local FixStrokes = function()
-    for _, instance in pairs(UI["G2L"]) do
+    for _, instance in pairs(G2L) do
         if instance:IsA("UIStroke") then
             local OThickness = instance:GetAttribute("OThickness") or instance.Thickness
             instance:SetAttribute("OThickness", OThickness)
