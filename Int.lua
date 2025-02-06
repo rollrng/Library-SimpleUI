@@ -178,18 +178,22 @@ G2L["26"] = Instance.new("UIAspectRatioConstraint", G2L["1"]);
 G2L["26"]["AspectRatio"] = 2.3806;
 
 local FixStrokes = function()
+   while task.wait() do
     for _, instance in pairs(G2L) do
         if instance:IsA("UIStroke") then
             local OThickness = instance:GetAttribute("OThickness") or instance.Thickness
             instance:SetAttribute("OThickness", OThickness)
             FixStrokeThickness(instance, OThickness, DEFAULT_VIEWPORT)
+		end
             end
         end
     end
 
     Camera:GetPropertyChangedSignal("ViewportSize"):Connect(FixStrokes)
 
-    FixStrokes()
+    task.spawn(function()
+	 FixStrokes()
+    end)
 
 
 local function C_1b()
