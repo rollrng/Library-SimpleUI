@@ -146,7 +146,7 @@ G2L["12"]["BackgroundTransparency"] = 1;
 G2L["12"]["Name"] = [[Opt Boost]];
 G2L["12"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["12"]["Text"] = [[Optimize Boost]];
-G2L["12"]["Position"] = UDim2.new(0.0202, 0, 0.62042, 0);
+G2L["12"]["Position"] = UDim2.new(0.0303, 0, 0.76963, 0);
 
 
 G2L["13"] = Instance.new("UICorner", G2L["12"]);
@@ -160,6 +160,42 @@ G2L["14"]["Thickness"] = 2;
 
 G2L["15"] = Instance.new("LocalScript", G2L["12"]);
 G2L["15"]["Name"] = [[Downgrade]];
+
+
+G2L["16"] = Instance.new("TextLabel", G2L["2"]);
+G2L["16"]["BorderSizePixel"] = 0;
+G2L["16"]["TextSize"] = 37;
+G2L["16"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["16"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["16"]["TextColor3"] = Color3.fromRGB(255, 0, 103);
+G2L["16"]["BackgroundTransparency"] = 1;
+G2L["16"]["Size"] = UDim2.new(0.76162, 0, 0.1, 0);
+G2L["16"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["16"]["Text"] = [[Cupid Eggs In Inventory:]];
+G2L["16"]["Name"] = [[Cupids Eggs Store]];
+G2L["16"]["Position"] = UDim2.new(0, 0, 0.58377, 0);
+
+
+G2L["17"] = Instance.new("UIStroke", G2L["16"]);
+G2L["17"]["Thickness"] = 2.5;
+
+
+G2L["18"] = Instance.new("TextLabel", G2L["2"]);
+G2L["18"]["BorderSizePixel"] = 0;
+G2L["18"]["TextSize"] = 37;
+G2L["18"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["18"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["18"]["TextColor3"] = Color3.fromRGB(255, 0, 103);
+G2L["18"]["BackgroundTransparency"] = 1;
+G2L["18"]["Size"] = UDim2.new(0.13081, 0, 0.1, 0);
+G2L["18"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["18"]["Text"] = [[]];
+G2L["18"]["Name"] = [[Cupids Eggs Store]];
+G2L["18"]["Position"] = UDim2.new(0.7798, 0, 0.58377, 0);
+
+
+G2L["19"] = Instance.new("UIStroke", G2L["18"]);
+G2L["19"]["Thickness"] = 2.5;
 
 
 local function C_d()
@@ -180,9 +216,7 @@ local script = G2L["15"];
 		local Lighting = game.Lighting
 		Lighting.GlobalShadows = 0
 		Lighting.FogEnd = 9e9
-		Lighting.Brightness = 0
-		
-		
+		Lighting.Brightness = 0		
 		game:GetService("RunService"):Set3dRenderingEnabled(false)
 		setfpscap(30)
 		warn("Optimization Ran, Rejoin To Revert.")
