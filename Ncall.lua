@@ -106,9 +106,9 @@ G2L["e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["e"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
 G2L["e"]["TextColor3"] = Color3.fromRGB(255, 0, 103);
 G2L["e"]["BackgroundTransparency"] = 1;
-G2L["e"]["Size"] = UDim2.new(0, 47, 0, 50);
+G2L["e"]["Size"] = UDim2.new(0, 42, 0, 50);
 G2L["e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["e"]["Text"] = [[]];
+G2L["e"]["Text"] = [[0]];
 G2L["e"]["Name"] = [[Huges Rolled Value]];
 G2L["e"]["Position"] = UDim2.new(0.4404, 0, 0.25654, 0);
 
@@ -216,7 +216,8 @@ local script = G2L["15"];
 		local Lighting = game.Lighting
 		Lighting.GlobalShadows = 0
 		Lighting.FogEnd = 9e9
-		Lighting.Brightness = 0		
+		Lighting.Brightness = 0
+				
 		game:GetService("RunService"):Set3dRenderingEnabled(false)
 		setfpscap(30)
 		warn("Optimization Ran, Rejoin To Revert.")
